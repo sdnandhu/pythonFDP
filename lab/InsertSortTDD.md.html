@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InsertSortTDD</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#tdd-approach-to-grokking-insertsort">TDD Approach to grokking InsertSort</a>
+<ul>
+<li><a href="#create-a-sorted-list-containing-numbers-from-0-to-6.">0 Create a sorted list containing numbers from 0 to 6.</a></li>
+<li><a href="#insert-the-element-3.5-into-the-sorted-list-at-index-4">1 Insert the element 3.5 into the sorted list at index 4</a></li>
+<li></li>
+<li><a href="#place-the-last-element-3.5-in-an-almost-sorted-list-into-the-list-at-index-4">2 Place the last element 3.5 in an almost sorted list into the list at index 4</a></li>
+<li><a href="#place-the-last-element-2.5-in-an-almost-sorted-list-into-the-list-at-the-appropriate-index-so-it-fully-sorted">3 Place the last element 2.5 in an almost sorted list into the list at the appropriate index so it fully sorted</a></li>
+<li><a href="#place-the-4th-element-in-the-list-into-the-first-part-of-the-list-03-at-the-appropriate-location">4 Place the 4th element in the list into the first part of the list [0:3] at the appropriate location</a></li>
+<li><a href="#place-the-last-four-elements-in-the-list-so-that-the-list-is-fully-sorted">5 Place the last four elements in the list so that the list is fully sorted</a></li>
+<li><a href="#place-your-code-inside-a-function--insertsortand-write-test-cases-to-test-the-functionality">6 Place your code inside a function  insertsortand write test cases to test the functionality</a></li>
+<li><a href="#replace-the-list-method-calls-and-instead-use-slicing-to-achieve-the-same-sorting-operation">7 Replace the list method calls and instead use slicing to achieve the same sorting operation</a></li>
+</ul>
+</li>
+<li><a href="#notes">Notes</a>
+<ul>
+<li><a href="#pre-requisites">Pre-requisites</a></li>
+<li><a href="#verbose-mode-output">Verbose Mode Output</a></li>
+<li><a href="#activities">Activities</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="tdd-approach-to-grokking-insertsort">TDD Approach to grokking InsertSort</h1>
+<h2 id="create-a-sorted-list-containing-numbers-from-0-to-6.">0 Create a sorted list containing numbers from 0 to 6.</h2>
+<ul>
+<li>Draw a representation diagram of the list, indicating values and indexes corresponding to the values</li>
+<li>Take the 3rd element and the last element and multiply them. Write code that does this and prints the actual value of the multiplication.</li>
+<li>Write a python program to create a list containing numbers 0 through 6. The first 3 elements must be in sorted in ascending order. The last 3 elements must be unsorted.
+<ul>
+<li>example: <code>[4, 5, 6, 0, 2, 1, 3]</code>or <code>[4, 5, 6, 1, 3, 2, 0]</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="insert-the-element-3.5-into-the-sorted-list-at-index-4">1 Insert the <code>element 3.5</code> into the sorted list at index 4</h2>
+<ul>
+<li>Draw a representation diagram of the list, indicating values and indexes corresponding to the values</li>
+<li>What is the python code which will achieve this? Print the list before the insertion and print the list after the insertion</li>
+<li>Try doing the above step using <code>enumerate</code> to display the index and value pairs and validate your diagram with it</li>
+</ul>
+<h2 id="section"></h2>
+<h2 id="place-the-last-element-3.5-in-an-almost-sorted-list-into-the-list-at-index-4">2 Place the last element <code>3.5</code> in an <code>almost</code> sorted list into the list at index 4</h2>
+<ul>
+<li>Build a sorted list containing numbers 0 to 6. Append 3.5 into the list at the very end.</li>
+<li>Draw a representation diagram for the above list</li>
+<li>Write Python code to remove <code>3.5</code> from its current location and then insert it at index 4. Print the list before and after insertion.</li>
+</ul>
+<h2 id="place-the-last-element-2.5-in-an-almost-sorted-list-into-the-list-at-the-appropriate-index-so-it-fully-sorted">3 Place the last element <code>2.5</code> in an <code>almost</code> sorted list into the list at the appropriate index so it fully sorted</h2>
+<ul>
+<li>Build a sorted list containing 0 to 6. Append <code>2.5</code> into the list at the very end.</li>
+<li>In your notebook, write pseudo-code for determining how to find the index at which it needs to be inserted.
+<ul>
+<li>Convert the pseudo code into Python code.</li>
+<li>Print the list before and after your insertion has happened</li>
+</ul>
+</li>
+</ul>
+<h2 id="place-the-4th-element-in-the-list-into-the-first-part-of-the-list-03-at-the-appropriate-location">4 Place the 4th element in the list into the first part of the list <code>[0:3]</code> at the appropriate location</h2>
+<ul>
+<li>Build a list in this order <code>[4, 5, 6, 0, 3, 1, 2]</code> - the 4th element being <code>0</code>. Represent this using a diagram in your notebook</li>
+<li>Initialize <code>idx = 4</code> and iterate through the first part of the list (which is already sorted) and insert it into the array at the appropriate location. Write the code for this.</li>
+</ul>
+<h2 id="place-the-last-four-elements-in-the-list-so-that-the-list-is-fully-sorted">5 Place the last four elements in the list so that the list is fully sorted</h2>
+<ul>
+<li>Build a list in this order <code>[4, 5, 6, 0, 3, 1, 2]</code></li>
+<li>Iterate through the last four elements and perform the same operations you did in the previous exercise</li>
+<li>Validate through proper print statements that your list is actually properly sorted</li>
+</ul>
+<h2 id="place-your-code-inside-a-function--insertsortand-write-test-cases-to-test-the-functionality">6 Place your code inside a function  <code>insertsort</code>and write test cases to test the functionality</h2>
+<h2 id="replace-the-list-method-calls-and-instead-use-slicing-to-achieve-the-same-sorting-operation">7 Replace the list method calls and instead use <code>slicing</code> to achieve the same sorting operation</h2>
+<h1 id="notes">Notes</h1>
+<ol>
+<li>Bring your code and notes to the FDP session in a notebook of your own.</li>
+<li>Use appropriate names for the variables so the code is self-explanatory. Additional comments may also be included to further explain the code</li>
+<li>Share with me your code through <code>repl.it</code> even prior to coming to class</li>
+<li>In the same file, clearly mark the code corresponding to the various steps that I have detailed above</li>
+<li>Alternatively, you may use CyberDojo to document your progress and write test cases for validation
+<ul>
+<li>Use <a href="http://cyberdojo1.kgfsl.com/id_join/show">http://cyberdojo1.kgfsl.com/id_join/show</a> link and the session ID EUUPUS</li>
+</ul>
+</li>
+</ol>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<ol>
+<li>Familiarity with List methods and operations
+<ul>
+<li>pop()</li>
+<li>insert()</li>
+<li>slicing</li>
+</ul>
+</li>
+</ol>
+<h2 id="verbose-mode-output">Verbose Mode Output</h2>
+<pre class=" language-bash"><code class="prism  language-bash">*************************
+    INSERT SORT <span class="token keyword">in</span> verbose mode
+    ************************
+bl <span class="token punctuation">[</span>2, 5, 3, 4, 6, 0, 1<span class="token punctuation">]</span>
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>2, 5<span class="token punctuation">]</span> <span class="token keyword">:</span> value:3 no good <span class="token keyword">for</span> idx:2 -- idx:2 j:2
+j is 1 after loop
+    -<span class="token operator">&gt;</span> Index to insert 1
+    -<span class="token operator">&gt;</span> After right <span class="token function">shift</span> <span class="token punctuation">[</span>2, 5, 5, 4, 6, 0, 1<span class="token punctuation">]</span>
+    -<span class="token operator">&gt;</span> After insertion   <span class="token punctuation">[</span>2, 3, 5, 4, 6, 0, 1<span class="token punctuation">]</span>
+intermediary res: <span class="token punctuation">[</span>2, 3, 5, 4, 6, 0, 1<span class="token punctuation">]</span>
+
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>2, 3, 5<span class="token punctuation">]</span> <span class="token keyword">:</span> value:4 no good <span class="token keyword">for</span> idx:3 -- idx:3 j:3
+j is 2 after loop
+    -<span class="token operator">&gt;</span> Index to insert 2
+    -<span class="token operator">&gt;</span> After right <span class="token function">shift</span> <span class="token punctuation">[</span>2, 3, 5, 5, 6, 0, 1<span class="token punctuation">]</span>
+    -<span class="token operator">&gt;</span> After insertion   <span class="token punctuation">[</span>2, 3, 4, 5, 6, 0, 1<span class="token punctuation">]</span>
+intermediary res: <span class="token punctuation">[</span>2, 3, 4, 5, 6, 0, 1<span class="token punctuation">]</span>
+
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:0 no good <span class="token keyword">for</span> idx:5 -- idx:5 j:5
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:0 no good <span class="token keyword">for</span> idx:4 -- idx:5 j:4
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:0 no good <span class="token keyword">for</span> idx:3 -- idx:5 j:3
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:0 no good <span class="token keyword">for</span> idx:2 -- idx:5 j:2
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:0 no good <span class="token keyword">for</span> idx:1 -- idx:5 j:1
+j is 0 after loop
+    -<span class="token operator">&gt;</span> Index to insert 0
+    -<span class="token operator">&gt;</span> After right <span class="token function">shift</span> <span class="token punctuation">[</span>2, 2, 3, 4, 5, 6, 1<span class="token punctuation">]</span>
+    -<span class="token operator">&gt;</span> After insertion   <span class="token punctuation">[</span>0, 2, 3, 4, 5, 6, 1<span class="token punctuation">]</span>
+intermediary res: <span class="token punctuation">[</span>0, 2, 3, 4, 5, 6, 1<span class="token punctuation">]</span>
+
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>0, 2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:1 no good <span class="token keyword">for</span> idx:6 -- idx:6 j:6
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>0, 2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:1 no good <span class="token keyword">for</span> idx:5 -- idx:6 j:5
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>0, 2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:1 no good <span class="token keyword">for</span> idx:4 -- idx:6 j:4
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>0, 2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:1 no good <span class="token keyword">for</span> idx:3 -- idx:6 j:3
+ -<span class="token operator">&gt;</span> sorted:<span class="token punctuation">[</span>0, 2, 3, 4, 5, 6<span class="token punctuation">]</span> <span class="token keyword">:</span> value:1 no good <span class="token keyword">for</span> idx:2 -- idx:6 j:2
+j is 1 after loop
+    -<span class="token operator">&gt;</span> Index to insert 1
+    -<span class="token operator">&gt;</span> After right <span class="token function">shift</span> <span class="token punctuation">[</span>0, 2, 2, 3, 4, 5, 6<span class="token punctuation">]</span>
+    -<span class="token operator">&gt;</span> After insertion   <span class="token punctuation">[</span>0, 1, 2, 3, 4, 5, 6<span class="token punctuation">]</span>
+intermediary res: <span class="token punctuation">[</span>0, 1, 2, 3, 4, 5, 6<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="activities">Activities</h2>
+<ol>
+<li>
+<p>Use a set of playing cards and demonstrate how they actually know <strong>insert_sort</strong> already</p>
+<ol start="2">
+<li>Ask for a video contribution for <strong>mergesort</strong> since there is good one available on the web. Ask them to be creative and make it engaging video, unlike mine below!
+<ol start="3">
+<li>Sample is available at <a href="http://j.mp/compareSort">http://j.mp/compareSort</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Use <a href="http://repl.it">repl.it</a>  or pythonanywhere (even better since it comes with Unix shell prompt as well) - form a list containing some random numbers of their choice.</p>
+<ol start="3">
+<li>Use alist.pop() and alist.insert alternatively and manually ask them to sort their own list using the insertsort technique</li>
+<li>There is a piece of code that they have to write to reflect what they are doing in their head</li>
+<li>SPOILER ALERT! - <a href="http://bit.ly/manInsert">http://bit.ly/manInsert</a></li>
+</ol>
+</li>
+<li>
+<p>Write code on CloudCoder <a href="http://j.mp/insertionSortCC">http://j.mp/insertionSortCC</a></p>
+</li>
+</ol>
+
+    </div>
+  </div>
+</body>
+
+</html>
